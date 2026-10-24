@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: forge-universal
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: FORGE_DB_PATH
+        value: /tmp/forge.db
